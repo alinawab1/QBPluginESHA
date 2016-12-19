@@ -1,0 +1,20 @@
+==========================================================
+* QB Desktop Application Integration Plugin For SugarCRM *
+==========================================================
+-------------
+Version 2.0
+-------------
+Released Date: 31-December-2015
+Compatible Sugar Versions: 7.5 or greater
+
+New Features:
+- Sugar.Opportunities One Way Sync to QB.Jobs (under the QB Customers/SugarAccounts)
+- Products can be synced to multiple QB Application via different QB files in Sugar.
+   + QB file filed is removed from Product Catalog.
+   + QB file has the subpanel under the product catalog and one can associate multiple QB Files with one product catalogue item.
+   + Products Sync is one way sync from Sugar to QB
+
+Fixes:
+- Added 'QB Product Name' field in Product Catalog module to save the short name (less than equal to 31 characters)
+- Auto select QB file for products
+- 

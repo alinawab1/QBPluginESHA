@@ -1,0 +1,60 @@
+{{#if value}}
+<table class="table table-striped dataTable">
+	<tr>
+		<th  data-fieldname="name">
+			<div  >
+				<span>Item Name</span>
+			</div>
+		</th>
+		<th  data-fieldname="description">
+			<div >
+				<span>Description</span>
+			</div>
+		</th>
+		<th  data-fieldname="quantity">
+			<div >
+				<span>Quantity</span>
+			</div>
+		</th>
+		<th  data-fieldname="rate">
+			<div >
+				<span>Rate</span>
+			</div>
+		</th>
+		<th  data-fieldname="amount">
+			<div >
+				<span>Amount</span>
+			</div>
+		</th>
+	</tr>
+	{{#each value}}
+		<tr>
+			<td data-fieldname="name" style="width: 200px;">
+				<div >
+					<span>{{Name}}</span>
+				</div>
+			</td>
+			<td  data-fieldname="description" style="width: 400px;">
+				<div >
+					<span style="white-space: normal;">{{Description}}</span>
+				</div>
+			</td>
+			<td  data-fieldname="quantity" style="width: 50px;">
+				<div >
+					<span>{{Quantity}}</span>
+				</div>
+			</td>
+			<td  data-fieldname="rate" style="width: 100px;">
+				<div  >
+					<span>{{Rate}}</span>
+				</div>
+			</td>
+			<td  data-fieldname="amount" style="width: 100px;">
+				<div  >
+					<span>{{Amount}}</span>
+				</div>
+			</td>
+		</tr>
+	{{/each}}
+</table>
+{{/if}}

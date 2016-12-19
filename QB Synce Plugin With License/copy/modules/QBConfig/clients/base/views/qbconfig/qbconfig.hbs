@@ -1,0 +1,156 @@
+<div class="row-fluid">
+	<div class="main-pane span12">
+		<div class="headerpane">
+			<div style="padding: 15px; float: left;">{{{str meta.title this.module}}}</div>
+			<div class="btn-toolbar pull-right">
+				{{#each meta.buttons}}
+					{{field ../this}}
+				{{/each}}
+			</div>
+			</h1>
+		</div>
+
+		<div class="record">
+			<div class="row-fluid">
+				<div class="span3"></div>
+				<div class="tab-layout span6">
+					<div class="content-tabs">
+						<ul class="nav nav-tabs" id="qbconfigTab">
+							{{#each meta.tabs}}
+							<li class="tab {{name}} {{active}}">
+								<a href="#{{name}}{{../cid}}" data-toggle="tab">{{str label ../this.module}}</a>
+							</li>
+							{{/each}}
+						</ul>
+						<div class="tab-content">
+							{{#each meta.tabs}}
+							<div class="tab-pane {{#eq name 'basic_tab'}}active{{/eq}}" id="{{name}}{{../cid}}" style="background-color: lightgray;">
+								{{#eq name "basic_tab"}}
+									<div class="row-fluid">
+										<span class="span3"></span>
+										<span class="span6">{{{str "LBL_LICENSE_INFO" ../../this.module}}}</span>
+										<span class="span3"></span>
+									</div>
+									{{#each fields}}
+										<div class="row-fluid">
+											{{#if label}}
+											<div class="{{labelspan}}">
+												<span class="record-label"><b>{{str label ../../../../this.module}}</b>: {{#if ../desc}}{{str ../desc ../../../../../this.module}}{{/if}}</span>
+											</div>
+											{{/if}}
+											{{#if date}}
+											<div class="span4">
+												<span class="record-label">{{str date ../../../../this.module}}</span>
+											</div>
+											{{/if}}
+											{{#if type}}
+												<div class="{{span}}">
+													{{field ../../../../this template=../template}}
+												</div>
+											{{/if}}
+											{{#if buttons}}
+												{{#each ../buttons}}
+													<div class="{{btnspan}}">
+														{{field ../../../../../this}}
+													</div>
+												{{/each}}
+											{{/if}}
+											{{#if html}}
+												{{#if span1}}
+													<div class="{{span1}}"></div>
+												{{/if}}
+												{{#if span2}}
+													<div class="{{span2}}">
+														{{{str ../html ../../../../../this.module}}}
+													</div>
+												{{/if}}
+												{{#if span3}}
+													<div class="{{span3}}"></div>
+												{{/if}}
+											{{/if}}
+										</div>
+									{{/each}}
+								{{/eq}}
+								{{#eq name "config_tab"}}
+									<div class="row-fluid">
+										<span class="span3"></span>
+										<span class="span6">{{{str "LBL_SYNC_INFO" ../../this.module}}}</span>
+										<span class="span3"></span>
+									</div>
+									<div class="row-fluid">
+										<span class="span6"><b>{{str "LBL_ENABLE_DISABLE" ../../this.module}}</b></span>
+										<span class="span6">
+											<b>SugarCRM <i class="icon-arrow-left icon-large"></i><i class="icon-arrow-right icon-large"></i> QuickBooks</b>
+										</span>
+									</div>
+									<div class="row-fluid">
+										<span class="span6">{{str "LBL_ENABLE_DISABLE_DESC1" ../../this.module}}<br />{{{str "LBL_ENABLE_DISABLE_DESC2" ../../this.module}}}</span>
+										<span class="span6">
+											<span><input name="account_customer" id="account_customer" value="1" type="checkbox" title="Sugar to QB"> Accounts/Contacts <i class="icon-resize-horizontal icon-large"></i> Customer <input name="customer_account" id="customer_account" value="1" type="checkbox" title="QB to Sugar"></span><br />
+											<span><input name="product_item" id="product_item" value="1" type="checkbox" title="Sugar to QB">  Product Catalog <i class="icon-resize-horizontal icon-large"></i> Items <input name="item_product" id="item_product" value="1" type="checkbox" title="QB to Sugar"></span><br />
+											<span><input name="quotes_estimate" id="quotes_estimate" value="1" type="checkbox"> Quotes <i class="icon-long-arrow-right icon-large"></i> Estimates/Sales Order</span><br />
+											<span><input name="sales_history_invoice" id="sales_history_invoice" value="1" type="checkbox"> Sales History <i class="icon-long-arrow-left icon-large"></i></i> Invoice</span><br />
+										</span>
+									</div>
+									{{#each fields}}
+										<div class="row-fluid">
+											<div class="span6">
+												<span class="record-label"><b>{{str label ../../../this.module}}: </b>{{str desc ../../../this.module}}</span>
+											</div>
+											<div class="span6">
+												{{field ../../../this template="edit"}}
+											</div>
+										</div>
+									{{/each}}
+								{{/eq}}
+								{{#eq name "function_tab"}}
+									<div class="row-fluid">
+										<span class="span3"></span>
+										<span class="span6">{{{str "LBL_FUNC_INFO" ../../this.module}}}</span>
+										<span class="span3"></span>
+									</div>
+									<div class="row-fluid">
+										<span class="span6">{{{str "LBL_QB_CUSTOMER_DESC" ../../this.module}}}</span>
+										<span class="span6">
+											<span class=""><input name="qb_customer_create" id="qb_customer_create" value="1" type="checkbox"> {{str "LBL_QB_CUSTOMER" ../../this.module}} </span><br />
+										</span>
+									</div>
+									<div class="row-fluid">
+										<span class="span6">{{{str "LBL_SUGAR_ACCOUNT_DESC" ../../this.module}}}</span>
+										<span class="span6">
+											<span class=""><input name="sugar_account_create" id="sugar_account_create" value="1" type="checkbox"> {{str "LBL_SUGAR_ACCOUNT" ../../this.module}}</span><br />
+										</span>
+									</div>
+									{{#each fields}}
+										<div class="row-fluid">
+											<div class="span6">
+												<span class="record-label"><b>{{str label ../../../this.module}}: </b>{{str desc ../../../this.module}}</span>
+											</div>
+											<div class="span6">
+												{{field ../../../this template="edit"}}
+											</div>
+										</div>
+									{{/each}}
+									{{#if buttons}}
+										<div class="row-fluid">
+											{{#each ../buttons}}
+												<div class="span6">
+													<span class="record-label">{{{str title ../../../../this.module}}}</span>
+												</div>
+												<div class="{{btnspan}}">
+													{{field ../../../../this}}
+												</div>
+											{{/each}}
+										</div>
+									{{/if}}
+								{{/eq}}
+							</div>
+							{{/each}}
+						</div>
+					</div>
+				</div>
+				<div class="span3"></div>
+			</div>
+		</div>
+	</div>			
+</div>

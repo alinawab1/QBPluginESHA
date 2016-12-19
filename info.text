@@ -1,0 +1,18 @@
+---------- Forwarded message ----------
+From: Muhammad Tariq Ibrar <tariq.ibrar@rolustech.com>
+Date: Wed, Mar 16, 2016 at 9:06 PM
+Subject: QB Plugins
+To: Umair awan <umair.awan@rolustech.com>
+
+
+Hi,
+Please find the attached latest QB plugin.
+
+Modifications:
+Post Install Script: Created new field "qb_product_name" in DB
+Handling special characters 
+Thanks!
+
+Note: I have also run the duplicate fix script on esha staging. and it run successfully.
+
+Thanks!
